@@ -451,12 +451,12 @@
                 <a href="index.html" class="logo">Hutan<span>Lestari</span></a>
                 <nav>
                     <ul>
-                        <li><a href="index.html">Beranda</a></li>
-                        <li><a href="tentang.html">Tentang</a></li>
-                        <li><a href="statistik.html" class="active">Statistik</a></li>
-                        <li><a href="pencegahan.html">Pencegahan</a></li>
-                        <li><a href="pelajari.html">Pelajari</a></li>
-                        <li><a href="peta-interaktif.html">Peta Interaktif</a></li>
+                        <li><a href="index.php">Beranda</a></li>
+                        <li><a href="tentang.php">Tentang</a></li>
+                        <li><a href="statistik.php" class="active">Statistik</a></li>
+                        <li><a href="pencegahan.php">Pencegahan</a></li>
+                        <li><a href="pelajari.php">Pelajari</a></li>
+                        <li><a href="peta-interaktif.php">Peta Interaktif</a></li>
                     </ul>
                 </nav>
             </div>
@@ -901,4 +901,5 @@
         });
     </script>
 </body>
+
 </html>
