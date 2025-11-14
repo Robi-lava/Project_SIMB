@@ -441,11 +441,11 @@
                 <nav>
                     <ul>
                         <li><a href="index.php">Beranda</a></li>
-                        <li><a href="#">Tentang</a></li>
-                        <li><a href="#">Statistik</a></li>
-                        <li><a href="#">Pencegahan</a></li>
+                        <li><a href="tentang.php">Tentang</a></li>
+                        <li><a href="statistik.php">Statistik</a></li>
+                        <li><a href="pencegahan.php">Pencegahan</a></li>
                         <li><a href="pelajari.php">Pelajari</a></li>
-                        <li><a href="#" class="active">Peta Interaktif</a></li>
+                        <li><a href="peta-interaktif.php" class="active">Peta Interaktif</a></li>
                     </ul>
                 </nav>
             </div>
@@ -867,4 +867,5 @@
         L.control.layers(baseLayers, overlays).addTo(map);
     </script>
 </body>
+
 </html>
