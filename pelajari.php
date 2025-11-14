@@ -396,7 +396,7 @@
                         <li><a href="statistik.php">Statistik</a></li>
                         <li><a href="pencegahan.php">Pencegahan</a></li>
                         <li><a href="pelajari.php" class="active">Pelajari</a></li>
-                        <li><a href="#">Kontak</a></li>
+                        <li><a href="kontak.php">Kontak</a></li>
                     </ul>
                 </nav>
             </div>
@@ -593,4 +593,5 @@
         });
     </script>
 </body>
+
 </html>
