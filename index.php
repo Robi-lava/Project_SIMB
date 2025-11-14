@@ -479,7 +479,7 @@
                 <p>Setiap tahun, jutaan hektar hutan hancur akibat kebakaran hutan. Bergabunglah dengan misi kami untuk mencegah kebakaran hutan dan melindungi ekosistem vital planet kita untuk generasi mendatang.</p>
                 <div class="cta-buttons">
                     <a href="pelajari.php" class="btn btn-primary">Pelajari Lebih Lanjut</a>
-                    <a href="donasi.php" class="btn btn-secondary">Donasi Sekarang</a>
+                    <a href="#donation" class="btn btn-secondary">Donasi Sekarang</a>
                 </div>
             </div>
         </div>
@@ -575,7 +575,7 @@
     </section>
 
     <!-- Donation Section -->
-    <section class="donation">
+    <section class="donation" id="donation">
         <div class="container">
             <div class="donation-container">
                 <h2 class="donation-title">Dukung Misi Kami</h2>
@@ -667,5 +667,42 @@
             });
         });
     </script>
+    <script>
+    // Smooth scroll untuk link anchor
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if(target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Donation amount selection
+    document.querySelectorAll('.amount-option').forEach(option => {
+        option.addEventListener('click', function() {
+            document.querySelectorAll('.amount-option').forEach(opt => {
+                opt.classList.remove('active');
+            });
+            this.classList.add('active');
+            document.getElementById('custom-amount').value = this.getAttribute('data-amount');
+        });
+    });
+
+    // Form submission
+    document.getElementById('donation-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Terima kasih atas donasi Anda! Dukungan Anda membantu melindungi hutan kita.');
+        this.reset();
+        document.querySelectorAll('.amount-option').forEach(opt => {
+            opt.classList.remove('active');
+        });
+    });
+</script>
 </body>
+
 </html>
