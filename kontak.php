@@ -32,11 +32,13 @@
             margin: 0 auto;
         }
         
-        /* Header Styles */
         header {
             padding: 1.5rem 0;
             background-color: rgba(28, 28, 28, 0.9);
             position: fixed;
+            background-color: var(--dark-bg);  
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            position: fixed; 
             width: 100%;
             z-index: 100;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
@@ -81,7 +83,6 @@
             color: var(--fire-orange);
         }
         
-        /* Page Header */
         .page-header {
             padding: 10rem 0 5rem;
             background: linear-gradient(rgba(28, 28, 28, 0.8), rgba(28, 28, 28, 0.9)), 
@@ -103,7 +104,6 @@
             margin: 0 auto;
         }
         
-        /* Contact Section */
         .contact-section {
             padding: 5rem 0;
         }
@@ -115,7 +115,6 @@
             margin-top: 3rem;
         }
         
-        /* Contact Info */
         .contact-info {
             display: flex;
             flex-direction: column;
@@ -161,7 +160,6 @@
             opacity: 0.8;
         }
         
-        /* Contact Form */
         .contact-form {
             background-color: rgba(255, 255, 255, 0.05);
             border-radius: 8px;
@@ -233,7 +231,6 @@
             color: var(--fire-orange);
         }
         
-        /* Emergency Contact */
         .emergency-contact {
             background-color: rgba(255, 69, 0, 0.1);
             padding: 5rem 0;
@@ -277,7 +274,6 @@
             font-weight: 800;
         }
         
-        /* Map Section */
         .map-section {
             padding: 5rem 0;
             background-color: var(--dark-bg);
@@ -307,7 +303,6 @@
             background-color: rgba(255, 255, 255, 0.05);
         }
         
-        /* Footer */
         footer {
             background-color: #111;
             padding: 3rem 0 1.5rem;
@@ -358,7 +353,6 @@
             font-size: 0.9rem;
         }
         
-        /* Success Message */
         .success-message {
             display: none;
             background-color: var(--forest-green);
@@ -372,7 +366,6 @@
             display: block;
         }
         
-        /* Responsive Design */
         @media (max-width: 968px) {
             .contact-grid {
                 grid-template-columns: 1fr;
@@ -409,7 +402,6 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <div class="container">
             <div class="header-content">
@@ -428,7 +420,6 @@
         </div>
     </header>
 
-    <!-- Page Header -->
     <section class="page-header">
         <div class="container">
             <h1>Hubungi Kami</h1>
@@ -436,7 +427,6 @@
         </div>
     </section>
 
-    <!-- Emergency Contact -->
     <section class="emergency-contact">
         <div class="container">
             <div class="emergency-box">
@@ -450,11 +440,9 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section class="contact-section">
         <div class="container">
             <div class="contact-grid">
-                <!-- Contact Info -->
                 <div class="contact-info">
                     <div class="info-card">
                         <div class="info-icon">📍</div>
@@ -494,7 +482,6 @@
                     </div>
                 </div>
                 
-                <!-- Contact Form -->
                 <div class="contact-form">
                     <h2>Kirim Pesan</h2>
                     <div class="success-message" id="successMessage">
@@ -540,7 +527,6 @@
         </div>
     </section>
 
-    <!-- Map Section -->
     <section class="map-section">
         <div class="container">
             <h2 class="section-title">Lokasi Kami</h2>
@@ -557,7 +543,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -599,23 +584,18 @@
     </footer>
 
     <script>
-        // Contact Form Handler
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            
-            // Show success message
+
             const successMessage = document.getElementById('successMessage');
             successMessage.classList.add('show');
-            
-            // Reset form
+        
             this.reset();
             
-            // Hide success message after 5 seconds
             setTimeout(() => {
                 successMessage.classList.remove('show');
             }, 5000);
             
-            // Scroll to success message
             successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
         });
     </script>
