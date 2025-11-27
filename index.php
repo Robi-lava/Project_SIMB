@@ -32,10 +32,11 @@
             margin: 0 auto;
         }
         
-        /* Header Styles */
         header {
             padding: 1.5rem 0;
-            position: absolute;
+            background-color: var(--dark-bg); 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5); 
+            position: fixed; 
             width: 100%;
             z-index: 100;
         }
@@ -78,7 +79,6 @@
             color: var(--fire-orange);
         }
         
-        /* Hero Section */
         .hero {
             height: 100vh;
             position: relative;
@@ -156,7 +156,6 @@
             color: var(--dark-bg);
         }
         
-        /* Statistics Section */
         .statistics {
             padding: 5rem 0;
             background-color: var(--dark-bg);
@@ -181,7 +180,7 @@
         
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 2rem;
         }
         
@@ -191,6 +190,10 @@
             border-radius: 8px;
             text-align: center;
             transition: transform 0.3s;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
         
         .stat-card:hover {
@@ -209,47 +212,49 @@
             font-size: 1.1rem;
         }
         
-        /* Causes Section */
-.causes {
-    padding: 5rem 0;
-    background-color: rgba(46, 139, 87, 0.1);
-}
+        .causes {
+            padding: 5rem 0;
+            background-color: rgba(46, 139, 87, 0.1);
+        }
 
-.causes-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
+        .causes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
 
-.cause-card {
-    background-color: rgba(255, 255, 255, 0.05);
-    border-radius: 8px;
-    overflow: hidden;
-    transition: transform 0.3s;
-}
+        .cause-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
 
-.cause-card:hover {
-    transform: translateY(-5px);
-}
+        .cause-card:hover {
+            transform: translateY(-5px);
+        }
 
-.cause-img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    display: block;
-}
+        .cause-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
 
-.cause-content {
-    padding: 1.5rem;
-}
+        .cause-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+        }
 
-.cause-title {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-}
+        .cause-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
         
-        /* Prevention Section */
         .prevention {
             padding: 5rem 0;
             background-color: var(--dark-bg);
@@ -257,7 +262,7 @@
         
         .prevention-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 2rem;
         }
         
@@ -269,6 +274,7 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
+            height: 100%;
         }
         
         .prevention-number {
@@ -282,6 +288,7 @@
             font-family: 'Montserrat', sans-serif;
             font-weight: 800;
             margin-bottom: 1.5rem;
+            flex-shrink: 0;
         }
         
         .prevention-title {
@@ -290,7 +297,6 @@
             margin-bottom: 1rem;
         }
         
-        /* Donation Section */
         .donation {
             padding: 5rem 0;
             background: linear-gradient(rgba(28, 28, 28, 0.9), rgba(28, 28, 28, 0.9)), 
@@ -373,7 +379,6 @@
             background-color: #e03d00;
         }
         
-        /* Footer */
         footer {
             background-color: #111;
             padding: 3rem 0 1.5rem;
@@ -424,7 +429,6 @@
             font-size: 0.9rem;
         }
         
-        /* Responsive Design */
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2.5rem;
@@ -437,55 +441,43 @@
             nav ul {
                 display: none;
             }
-            
-            .mobile-menu-btn {
-                display: block;
-                background: none;
-                border: none;
-                color: var(--white);
-                font-size: 1.5rem;
-                cursor: pointer;
-            }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <div class="container">
             <div class="header-content">
                 <a href="index.php" class="logo">Hutan<span>Lestari</span></a>
-<nav>
-    <ul>
-        <li><a href="index.php">Beranda</a></li>
-        <li><a href="tentang.php">Tentang</a></li>
-        <li><a href="statistik.php">Statistik</a></li>
-        <li><a href="pencegahan.php">Pencegahan</a></li>
-        <li><a href="pelajari.php">Pelajari</a></li>
-        <li><a href="peta-interaktif.php">Peta Interaktif</a></li> 
-    </ul>
-</nav>
+                <nav>
+                    <ul>
+                        <li><a href="index.php">Beranda</a></li>
+                        <li><a href="tentang.php">Tentang</a></li>
+                        <li><a href="statistik.php">Statistik</a></li>
+                        <li><a href="pencegahan.php">Pencegahan</a></li>
+                        <li><a href="pelajari.php">Pelajari</a></li>
+                        <li><a href="peta-interaktif.php">Peta Interaktif</a></li> 
+                    </ul>
                 </nav>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-bg"></div>
         <div class="container">
             <div class="hero-content">
                 <h1>Hentikan Kebakaran Hutan!</h1>
-                <p>Setiap tahun, jutaan hektar hutan hancur akibat kebakaran hutan. Bergabunglah dengan misi kami untuk mencegah kebakaran hutan dan melindungi ekosistem vital planet kita untuk generasi mendatang.</p>
+                <p>Setiap tahun, jutaan hektar hutan hancur akibat kebakaran hutan. 
+                    Bergabunglah dengan misi kami untuk mencegah kebakaran hutan dan melindungi ekosistem vital planet kita untuk generasi mendatang.</p>
                 <div class="cta-buttons">
                     <a href="pelajari.php" class="btn btn-primary">Pelajari Lebih Lanjut</a>
-                    <a href="#donation" class="btn btn-secondary">Donasi Sekarang</a>
+                    <a href="donasi.php" class="btn btn-secondary">Donasi Sekarang</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Statistics Section -->
     <section class="statistics">
         <div class="container">
             <h2 class="section-title">Dampak Kebakaran Hutan</h2>
@@ -510,42 +502,39 @@
         </div>
     </section>
 
-<!-- Causes Section -->
-<section class="causes">
-    <div class="container">
-        <h2 class="section-title">Penyebab Umum Kebakaran Hutan</h2>
-        <div class="causes-grid">
+    <section class="causes">
+        <div class="container">
+            <h2 class="section-title">Penyebab Umum Kebakaran Hutan</h2>
+            <div class="causes-grid">
 
-            <div class="cause-card">
-                <img src="image/api_unggung.jpg" alt="Api Unggun" class="cause-img">
-                <div class="cause-content">
-                    <h3 class="cause-title">Api Unggun</h3>
-                    <p>Api unggun yang tidak dipadamkan dengan benar menjadi penyebab utama kebakaran hutan, terutama dalam kondisi kering.</p>
+                <div class="cause-card">
+                    <img src="image/api_unggung.jpg" alt="Api Unggun" class="cause-img">
+                    <div class="cause-content">
+                        <h3 class="cause-title">Api Unggun</h3>
+                        <p>Api unggun yang tidak dipadamkan dengan benar menjadi penyebab utama kebakaran hutan, terutama dalam kondisi kering.</p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="cause-card">
-                <img src="image/petir.jpg" alt="Sambaran Petir" class="cause-img">
-                <div class="cause-content">
-                    <h3 class="cause-title">Sambaran Petir</h3>
-                    <p>Penyebab alami seperti petir dapat menyulut vegetasi kering, terutama selama badai petir.</p>
+                <div class="cause-card">
+                    <img src="image/petir.jpg" alt="Sambaran Petir" class="cause-img">
+                    <div class="cause-content">
+                        <h3 class="cause-title">Sambaran Petir</h3>
+                        <p>Penyebab alami seperti petir dapat menyulut vegetasi kering, terutama selama badai petir.</p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="cause-card">
-                <img src="image/rokok.jpg" alt="Puntung Rokok" class="cause-img">
-                <div class="cause-content">
-                    <h3 class="cause-title">Puntung Rokok</h3>
-                    <p>Puntung rokok yang dibuang sembarangan dapat membara di rerumputan dan daun kering, memicu kebakaran berjam-jam kemudian.</p>
+                <div class="cause-card">
+                    <img src="image/rokok.jpg" alt="Puntung Rokok" class="cause-img">
+                    <div class="cause-content">
+                        <h3 class="cause-title">Puntung Rokok</h3>
+                        <p>Puntung rokok yang dibuang sembarangan dapat membara di rerumputan dan daun kering, memicu kebakaran berjam-jam kemudian.</p>
+                    </div>
                 </div>
-            </div>
 
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-
-    <!-- Prevention Section -->
     <section class="prevention">
         <div class="container">
             <h2 class="section-title">Cara Mencegah Kebakaran Hutan</h2>
@@ -574,8 +563,7 @@
         </div>
     </section>
 
-    <!-- Donation Section -->
-    <section class="donation" id="donation">
+    <section class="donation">
         <div class="container">
             <div class="donation-container">
                 <h2 class="donation-title">Dukung Misi Kami</h2>
@@ -604,7 +592,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -646,7 +633,6 @@
     </footer>
 
     <script>
-        // Donation amount selection
         document.querySelectorAll('.amount-option').forEach(option => {
             option.addEventListener('click', function() {
                 document.querySelectorAll('.amount-option').forEach(opt => {
@@ -657,7 +643,6 @@
             });
         });
 
-        // Form submission
         document.getElementById('donation-form').addEventListener('submit', function(e) {
             e.preventDefault();
             alert('Terima kasih atas donasi Anda! Dukungan Anda membantu melindungi hutan kita.');
@@ -667,42 +652,5 @@
             });
         });
     </script>
-    <script>
-    // Smooth scroll untuk link anchor
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if(target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
-
-    // Donation amount selection
-    document.querySelectorAll('.amount-option').forEach(option => {
-        option.addEventListener('click', function() {
-            document.querySelectorAll('.amount-option').forEach(opt => {
-                opt.classList.remove('active');
-            });
-            this.classList.add('active');
-            document.getElementById('custom-amount').value = this.getAttribute('data-amount');
-        });
-    });
-
-    // Form submission
-    document.getElementById('donation-form').addEventListener('submit', function(e) {
-        e.preventDefault();
-        alert('Terima kasih atas donasi Anda! Dukungan Anda membantu melindungi hutan kita.');
-        this.reset();
-        document.querySelectorAll('.amount-option').forEach(opt => {
-            opt.classList.remove('active');
-        });
-    });
-</script>
 </body>
-
 </html>
