@@ -32,14 +32,13 @@
             margin: 0 auto;
         }
         
-        /* Header Styles */
         header {
             padding: 1.5rem 0;
-            background-color: rgba(28, 28, 28, 0.9);
+            background-color: var(--dark-bg); 
             position: fixed;
             width: 100%;
             z-index: 100;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
         }
         
         .header-content {
@@ -80,7 +79,6 @@
             color: var(--fire-orange);
         }
         
-        /* Page Header */
         .page-header {
             padding: 10rem 0 5rem;
             background: linear-gradient(rgba(28, 28, 28, 0.8), rgba(28, 28, 28, 0.9)), 
@@ -102,7 +100,6 @@
             margin: 0 auto;
         }
         
-        /* Section Styles */
         section {
             padding: 5rem 0;
         }
@@ -124,7 +121,6 @@
             margin: 1rem auto;
         }
         
-        /* Impact Section */
         .impact {
             background-color: var(--dark-bg);
         }
@@ -158,14 +154,13 @@
             margin-bottom: 1rem;
         }
         
-        /* Prevention Methods Section */
         .prevention-methods {
             background-color: rgba(46, 139, 87, 0.1);
         }
         
         .methods-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 2rem;
         }
         
@@ -177,6 +172,7 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
+            height: 100%;
         }
         
         .method-number {
@@ -190,6 +186,7 @@
             font-family: 'Montserrat', sans-serif;
             font-weight: 800;
             margin-bottom: 1.5rem;
+            flex-shrink: 0;
         }
         
         .method-title {
@@ -198,7 +195,6 @@
             margin-bottom: 1rem;
         }
         
-        /* Resources Section */
         .resources {
             background-color: var(--dark-bg);
         }
@@ -214,6 +210,8 @@
             border-radius: 8px;
             overflow: hidden;
             transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
         }
         
         .resource-card:hover {
@@ -229,6 +227,11 @@
         
         .resource-content {
             padding: 1.5rem;
+            display: flex;          
+            flex-direction: column; 
+            align-items: center;    
+            text-align: center;     
+            flex-grow: 1;           
         }
         
         .resource-title {
@@ -245,7 +248,7 @@
             text-decoration: none;
             transition: all 0.3s;
             cursor: pointer;
-            margin-top: 1rem;
+            margin-top: auto; 
         }
         
         .btn-primary {
@@ -259,7 +262,6 @@
             color: var(--fire-orange);
         }
         
-        /* FAQ Section */
         .faq {
             background-color: rgba(46, 139, 87, 0.1);
         }
@@ -307,7 +309,6 @@
             transform: rotate(45deg);
         }
         
-        /* Footer */
         footer {
             background-color: #111;
             padding: 3rem 0 1.5rem;
@@ -358,7 +359,6 @@
             font-size: 0.9rem;
         }
         
-        /* Responsive Design */
         @media (max-width: 768px) {
             .page-header h1 {
                 font-size: 2.5rem;
@@ -371,24 +371,14 @@
             nav ul {
                 display: none;
             }
-            
-            .mobile-menu-btn {
-                display: block;
-                background: none;
-                border: none;
-                color: var(--white);
-                font-size: 1.5rem;
-                cursor: pointer;
-            }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <div class="container">
             <div class="header-content">
-                <a href="index.html" class="logo">Hutan<span>Lestari</span></a>
+                <a href="index.php" class="logo">Hutan<span>Lestari</span></a>
                 <nav>
                     <ul>
                         <li><a href="index.php">Beranda</a></li>
@@ -403,7 +393,6 @@
         </div>
     </header>
 
-    <!-- Page Header -->
     <section class="page-header">
         <div class="container">
             <h1>Pelajari Lebih Lanjut</h1>
@@ -411,7 +400,6 @@
         </div>
     </section>
 
-    <!-- Impact Section -->
     <section class="impact">
         <div class="container">
             <h2 class="section-title">Dampak Kebakaran Hutan</h2>
@@ -419,12 +407,14 @@
                 <div class="impact-card">
                     <div class="impact-icon">🔥</div>
                     <h3 class="impact-title">Dampak Lingkungan</h3>
-                    <p>Kebakaran hutan menghancurkan ekosistem, mengurangi keanekaragaman hayati, dan melepaskan karbon dalam jumlah besar ke atmosfer, mempercepat perubahan iklim.</p>
+                    <p>Kebakaran hutan menghancurkan ekosistem, mengurangi keanekaragaman hayati, dan 
+                        melepaskan karbon dalam jumlah besar ke atmosfer, mempercepat perubahan iklim.</p>
                 </div>
                 <div class="impact-card">
                     <div class="impact-icon">🏥</div>
                     <h3 class="impact-title">Dampak Kesehatan</h3>
-                    <p>Asap kebakaran hutan mengandung partikel berbahaya yang dapat menyebabkan masalah pernapasan, iritasi mata, dan memperburuk kondisi kesehatan yang sudah ada.</p>
+                    <p>Asap kebakaran hutan mengandung partikel berbahaya yang dapat menyebabkan masalah pernapasan, 
+                        iritasi mata, dan memperburuk kondisi kesehatan yang sudah ada.</p>
                 </div>
                 <div class="impact-card">
                     <div class="impact-icon">💰</div>
@@ -435,7 +425,6 @@
         </div>
     </section>
 
-    <!-- Prevention Methods Section -->
     <section class="prevention-methods">
         <div class="container">
             <h2 class="section-title">Metode Pencegahan</h2>
@@ -464,7 +453,6 @@
         </div>
     </section>
 
-    <!-- Resources Section -->
     <section class="resources">
         <div class="container">
             <h2 class="section-title">Sumber Daya Tambahan</h2>
@@ -474,7 +462,7 @@
                     <div class="resource-content">
                         <h3 class="resource-title">Panduan Pencegahan Kebakaran Hutan</h3>
                         <p>Unduh panduan lengkap tentang cara mencegah kebakaran hutan di berbagai situasi dan lingkungan.</p>
-                        <a href="#" class="btn btn-primary">Unduh Sekarang</a>
+                        <a href="file doc/Panduan Pengendalian Kebakaran Hutan dan Lahan.pdf" download class="btn btn-primary">Unduh Sekarang</a>
                     </div>
                 </div>
                 <div class="resource-card">
@@ -497,7 +485,6 @@
         </div>
     </section>
 
-    <!-- FAQ Section -->
     <section class="faq">
         <div class="container">
             <h2 class="section-title">Pertanyaan Umum</h2>
@@ -508,7 +495,9 @@
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Penyebab utama kebakaran hutan di Indonesia adalah aktivitas manusia, termasuk pembukaan lahan untuk perkebunan, pertanian berpindah, api unggun yang tidak diawasi, dan pembuangan puntung rokok sembarangan. Faktor alam seperti petir juga dapat menyebabkan kebakaran, tetapi persentasenya lebih kecil.</p>
+                        <p>Penyebab utama kebakaran hutan di Indonesia adalah aktivitas manusia, termasuk pembukaan lahan untuk perkebunan, pertanian berpindah, 
+                            api unggun yang tidak diawasi, dan pembuangan puntung rokok sembarangan. 
+                            Faktor alam seperti petir juga dapat menyebabkan kebakaran, tetapi persentasenya lebih kecil.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -517,7 +506,9 @@
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Anda dapat membantu dengan: selalu mematikan api unggun sepenuhnya sebelum meninggalkan lokasi, tidak membuang puntung rokok sembarangan, melaporkan aktivitas mencurigakan yang dapat memicu kebakaran, mendukung organisasi yang bekerja untuk pencegahan kebakaran hutan, dan menyebarkan kesadaran tentang pentingnya pencegahan.</p>
+                        <p>Anda dapat membantu dengan: selalu mematikan api unggun sepenuhnya sebelum meninggalkan lokasi, 
+                            tidak membuang puntung rokok sembarangan, melaporkan aktivitas mencurigakan yang dapat memicu kebakaran, 
+                            mendukung organisasi yang bekerja untuk pencegahan kebakaran hutan, dan menyebarkan kesadaran tentang pentingnya pencegahan.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -526,7 +517,9 @@
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Jika Anda melihat kebakaran hutan, segera hubungi layanan darurat setempat (115 atau nomor darurat lokal). Jangan mencoba memadamkan api sendiri jika sudah besar. Evakuasi area dengan cepat, tutup hidung dan mulut dengan kain basah jika asap tebal, dan ikuti instruksi dari pihak berwenang.</p>
+                        <p>Jika Anda melihat kebakaran hutan, segera hubungi layanan darurat setempat (115 atau nomor darurat lokal). 
+                            Jangan mencoba memadamkan api sendiri jika sudah besar. Evakuasi area dengan cepat, tutup hidung dan mulut dengan kain basah jika asap tebal, 
+                            dan ikuti instruksi dari pihak berwenang.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -535,14 +528,15 @@
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Perubahan iklim memperburuk risiko kebakaran hutan dengan meningkatkan suhu global, memperpanjang musim kemarau, dan membuat vegetasi lebih kering dan mudah terbakar. Selain itu, kebakaran hutan sendiri melepaskan karbon dalam jumlah besar, menciptakan siklus yang mempercepat perubahan iklim.</p>
+                        <p>Perubahan iklim memperburuk risiko kebakaran hutan dengan meningkatkan suhu global, 
+                            memperpanjang musim kemarau, dan membuat vegetasi lebih kering dan mudah terbakar. 
+                            Selain itu, kebakaran hutan sendiri melepaskan karbon dalam jumlah besar, menciptakan siklus yang mempercepat perubahan iklim.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -584,7 +578,6 @@
     </footer>
 
     <script>
-        // FAQ Toggle
         document.querySelectorAll('.faq-question').forEach(question => {
             question.addEventListener('click', () => {
                 const item = question.parentNode;
@@ -593,5 +586,4 @@
         });
     </script>
 </body>
-
 </html>
