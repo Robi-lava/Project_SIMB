@@ -32,7 +32,6 @@
             margin: 0 auto;
         }
         
-        /* Header Styles */
         header {
             padding: 1.5rem 0;
             background-color: rgba(28, 28, 28, 0.9);
@@ -41,6 +40,7 @@
             z-index: 1000;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
+        
         
         .header-content {
             display: flex;
@@ -80,7 +80,6 @@
             color: var(--fire-orange);
         }
         
-        /* Page Header */
         .page-header {
             padding: 8rem 0 4rem;
             background: linear-gradient(rgba(28, 28, 28, 0.8), rgba(28, 28, 28, 0.9)), 
@@ -102,7 +101,6 @@
             margin: 0 auto;
         }
         
-        /* Section Styles */
         section {
             padding: 5rem 0;
         }
@@ -124,7 +122,6 @@
             margin: 1rem auto;
         }
         
-        /* Prevention Steps */
         .prevention-steps {
             background-color: var(--dark-bg);
         }
@@ -189,7 +186,6 @@
             font-weight: bold;
         }
         
-        /* Community Programs */
         .community-programs {
             background-color: rgba(46, 139, 87, 0.1);
         }
@@ -224,7 +220,6 @@
             color: var(--fire-orange);
         }
         
-        /* Technology Section */
         .technology {
             background-color: var(--dark-bg);
         }
@@ -254,7 +249,6 @@
             color: var(--fire-orange);
         }
         
-        /* Emergency Preparedness */
         .emergency {
             background-color: rgba(46, 139, 87, 0.1);
         }
@@ -295,7 +289,6 @@
             left: 0;
         }
         
-        /* Download Resources */
         .resources {
             background-color: var(--dark-bg);
         }
@@ -352,7 +345,6 @@
             transform: translateY(-2px);
         }
         
-        /* Footer */
         footer {
             background-color: #111;
             padding: 3rem 0 1.5rem;
@@ -425,7 +417,6 @@
             font-size: 0.9rem;
         }
         
-        /* Responsive Design */
         @media (max-width: 768px) {
             .page-header h1 {
                 font-size: 2.2rem;
@@ -452,7 +443,6 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <div class="container">
             <div class="header-content">
@@ -471,7 +461,6 @@
         </div>
     </header>
 
-    <!-- Page Header -->
     <section class="page-header">
         <div class="container">
             <h1>Pencegahan Kebakaran Hutan</h1>
@@ -479,7 +468,6 @@
         </div>
     </section>
 
-    <!-- Prevention Steps Section -->
     <section class="prevention-steps">
         <div class="container">
             <h2 class="section-title">Langkah-Langkah Pencegahan</h2>
@@ -543,7 +531,6 @@
         </div>
     </section>
 
-    <!-- Community Programs Section -->
     <section class="community-programs">
         <div class="container">
             <h2 class="section-title">Program Masyarakat</h2>
@@ -575,7 +562,6 @@
         </div>
     </section>
 
-    <!-- Technology Section -->
     <section class="technology">
         <div class="container">
             <h2 class="section-title">Teknologi Pencegahan</h2>
@@ -607,7 +593,6 @@
         </div>
     </section>
 
-    <!-- Emergency Preparedness Section -->
     <section class="emergency">
         <div class="container">
             <h2 class="section-title">Kesiapan Darurat</h2>
@@ -648,7 +633,6 @@
         </div>
     </section>
 
-    <!-- Download Resources Section -->
     <section class="resources">
         <div class="container">
             <h2 class="section-title">Sumber Daya Unduhan</h2>
@@ -684,7 +668,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -728,7 +711,6 @@
     </footer>
 
     <script>
-        // Smooth scroll untuk anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -738,7 +720,6 @@
             });
         });
 
-        // Animation on scroll
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -753,7 +734,6 @@
             });
         }, observerOptions);
 
-        // Observe elements for animation
         document.querySelectorAll('.step-item, .program-card, .tech-card, .emergency-card, .resource-card').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(20px)';
@@ -762,5 +742,4 @@
         });
     </script>
 </body>
-
 </html>
