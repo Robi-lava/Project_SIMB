@@ -32,14 +32,13 @@
             margin: 0 auto;
         }
         
-        /* Header Styles */
         header {
             padding: 1.5rem 0;
-            background-color: rgba(28, 28, 28, 0.9);
-            position: fixed;
+            background-color: var(--dark-bg); 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            position: fixed; 
             width: 100%;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            z-index: 100;
         }
         
         .header-content {
@@ -80,7 +79,6 @@
             color: var(--fire-orange);
         }
         
-        /* Page Header */
         .page-header {
             padding: 8rem 0 4rem;
             background: linear-gradient(rgba(28, 28, 28, 0.8), rgba(28, 28, 28, 0.9)), 
@@ -102,7 +100,6 @@
             margin: 0 auto;
         }
         
-        /* Section Styles */
         section {
             padding: 5rem 0;
         }
@@ -124,7 +121,6 @@
             margin: 1rem auto;
         }
         
-        /* About Content */
         .about-content {
             max-width: 800px;
             margin: 0 auto;
@@ -136,7 +132,6 @@
             text-align: justify;
         }
         
-        /* Mission Vision Section */
         .mission-vision {
             background-color: rgba(46, 139, 87, 0.1);
         }
@@ -166,7 +161,6 @@
             color: var(--fire-orange);
         }
         
-        /* Team Section */
         .team {
             background-color: var(--dark-bg);
         }
@@ -243,7 +237,6 @@
             color: rgba(255, 255, 255, 0.8);
         }
         
-        /* Values Section */
         .values {
             background-color: rgba(46, 139, 87, 0.1);
         }
@@ -280,7 +273,6 @@
             margin-bottom: 1rem;
         }
         
-        /* Footer */
         footer {
             background-color: #111;
             padding: 3rem 0 1.5rem;
@@ -353,7 +345,6 @@
             font-size: 0.9rem;
         }
         
-        /* Responsive Design */
         @media (max-width: 768px) {
             .page-header h1 {
                 font-size: 2.2rem;
@@ -370,7 +361,6 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <div class="container">
             <div class="header-content">
@@ -389,7 +379,6 @@
         </div>
     </header>
 
-    <!-- Page Header -->
     <section class="page-header">
         <div class="container">
             <h1>Tentang HutanLestari</h1>
@@ -397,7 +386,6 @@
         </div>
     </section>
 
-    <!-- About Section -->
     <section class="about">
         <div class="container">
             <div class="about-content">
@@ -413,7 +401,6 @@
         </div>
     </section>
 
-    <!-- Mission & Vision Section -->
     <section class="mission-vision">
         <div class="container">
             <h2 class="section-title">Misi & Visi</h2>
@@ -432,7 +419,6 @@
         </div>
     </section>
 
-    <!-- Values Section -->
     <section class="values">
         <div class="container">
             <h2 class="section-title">Nilai-Nilai Kami</h2>
@@ -461,7 +447,6 @@
         </div>
     </section>
 
-    <!-- Team Section -->
     <section class="team">
         <div class="container">
             <h2 class="section-title">Tim Kami</h2>
@@ -512,7 +497,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
