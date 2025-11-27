@@ -33,14 +33,13 @@
             margin: 0 auto;
         }
         
-        /* Header Styles */
         header {
             padding: 1.5rem 0;
-            background-color: rgba(28, 28, 28, 0.9);
-            position: fixed;
+            background-color: var(--dark-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            position: fixed; 
             width: 100%;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
         
         .header-content {
@@ -81,9 +80,8 @@
             color: var(--fire-orange);
         }
         
-        /* Page Header */
         .page-header {
-            padding: 8rem 0 2rem;
+            padding: 10rem 0 3rem; 
             background: linear-gradient(rgba(28, 28, 28, 0.8), rgba(28, 28, 28, 0.9)), 
                         url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300"><rect width="1200" height="300" fill="%231C1C1C"/><path d="M0,200 Q300,100 600,200 T1200,100 L1200,300 L0,300 Z" fill="%232E8B57" opacity="0.3"/><circle cx="900" cy="80" r="30" fill="%23FF4500" opacity="0.3"/></svg>');
             background-size: cover;
@@ -104,7 +102,6 @@
             text-align: center;
         }
         
-        /* Map Section */
         .map-section {
             padding: 2rem 0 5rem;
         }
@@ -118,6 +115,7 @@
         @media (min-width: 992px) {
             .map-container {
                 flex-direction: row;
+                align-items: flex-start;
             }
         }
         
@@ -126,12 +124,14 @@
             background-color: rgba(255, 255, 255, 0.05);
             border-radius: 8px;
             padding: 2rem;
-            max-width: 100%;
+            width: 100%;
         }
         
         @media (min-width: 992px) {
             .map-controls {
                 max-width: 350px;
+                position: sticky;
+                top: 100px;
             }
         }
         
@@ -139,7 +139,7 @@
             margin-bottom: 2rem;
         }
         
-        .map-legend h3 {
+        .map-legend h3, .map-filters h3 {
             font-family: 'Montserrat', sans-serif;
             margin-bottom: 1rem;
             font-size: 1.3rem;
@@ -156,20 +156,6 @@
             height: 20px;
             border-radius: 4px;
             margin-right: 10px;
-        }
-        
-        .legend-label {
-            font-size: 0.9rem;
-        }
-        
-        .map-filters {
-            margin-bottom: 2rem;
-        }
-        
-        .map-filters h3 {
-            font-family: 'Montserrat', sans-serif;
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
         }
         
         .filter-group {
@@ -204,18 +190,21 @@
         
         .map-display {
             flex: 2;
-            height: 600px;
+            height: 600px; 
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 1;
         }
         
         #interactive-map {
             width: 100%;
             height: 100%;
+            background-color: #222;
         }
         
-        /* Info Panel */
+
         .info-panel {
             background-color: rgba(28, 28, 28, 0.9);
             border-radius: 8px;
@@ -245,6 +234,8 @@
             border: none;
             font-family: 'Open Sans', sans-serif;
             font-size: 1rem;
+            width: 100%;
+            text-align: center;
         }
         
         .btn-primary {
@@ -256,7 +247,6 @@
             background-color: #e03d00;
         }
         
-        /* Statistics Section */
         .statistics {
             padding: 5rem 0;
             background-color: rgba(46, 139, 87, 0.1);
@@ -309,7 +299,6 @@
             font-size: 1.1rem;
         }
         
-        /* Footer */
         footer {
             background-color: #111;
             padding: 3rem 0 1.5rem;
@@ -360,55 +349,17 @@
             font-size: 0.9rem;
         }
         
-        /* Responsive Design */
         @media (max-width: 768px) {
-            .page-header h1 {
-                font-size: 2.2rem;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
-            
-            nav ul {
-                display: none;
-            }
+            .page-header h1 { font-size: 2.2rem; }
+            .section-title { font-size: 2rem; }
+            nav ul { display: none; }
         }
         
-        /* Leaflet Map Customization */
-        .leaflet-container {
-            background-color: var(--dark-bg);
-        }
-        
-        .leaflet-popup-content-wrapper {
-            background-color: var(--dark-bg);
-            color: var(--white);
-            border-radius: 8px;
-        }
-        
-        .leaflet-popup-tip {
-            background-color: var(--dark-bg);
-        }
-        
-        .risk-high {
-            background-color: #FF4500;
-        }
-        
-        .risk-medium {
-            background-color: #FFA500;
-        }
-        
-        .risk-low {
-            background-color: #FFFF00;
-        }
-        
-        .risk-very-low {
-            background-color: #90EE90;
-        }
-        
-        .risk-no-data {
-            background-color: #CCCCCC;
-        }
+        .risk-high { background-color: #FF4500; }
+        .risk-medium { background-color: #FFA500; }
+        .risk-low { background-color: #FFFF00; }
+        .risk-very-low { background-color: #90EE90; }
+        .risk-no-data { background-color: #CCCCCC; }
         
         .custom-marker {
             width: 30px;
@@ -422,18 +373,24 @@
             border: 2px solid white;
         }
         
-        .leaflet-control-layers {
-            background-color: var(--dark-bg) !important;
-            color: var(--white) !important;
+        .leaflet-popup-content-wrapper {
+            background-color: var(--dark-bg);
+            color: var(--white);
         }
-        
-        .leaflet-control-layers label {
-            color: var(--white) !important;
+        .leaflet-popup-tip {
+            background-color: var(--dark-bg);
+        }
+        .leaflet-container a {
+            color: var(--fire-orange);
+        }
+        .leaflet-control-layers {
+            background: #333;
+            color: #fff;
+            border: 1px solid #555;
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <div class="container">
             <div class="header-content">
@@ -452,7 +409,6 @@
         </div>
     </header>
 
-    <!-- Page Header -->
     <section class="page-header">
         <div class="container">
             <h1>Peta Risiko Kebakaran Hutan</h1>
@@ -460,33 +416,17 @@
         </div>
     </section>
 
-    <!-- Map Section -->
     <section class="map-section">
         <div class="container">
             <div class="map-container">
                 <div class="map-controls">
                     <div class="map-legend">
                         <h3>Legenda Risiko</h3>
-                        <div class="legend-item">
-                            <div class="legend-color risk-high"></div>
-                            <div class="legend-label">Risiko Tinggi</div>
-                        </div>
-                        <div class="legend-item">
-                            <div class="legend-color risk-medium"></div>
-                            <div class="legend-label">Risiko Sedang</div>
-                        </div>
-                        <div class="legend-item">
-                            <div class="legend-color risk-low"></div>
-                            <div class="legend-label">Risiko Rendah</div>
-                        </div>
-                        <div class="legend-item">
-                            <div class="legend-color risk-very-low"></div>
-                            <div class="legend-label">Risiko Sangat Rendah</div>
-                        </div>
-                        <div class="legend-item">
-                            <div class="legend-color risk-no-data"></div>
-                            <div class="legend-label">Tidak Ada Data</div>
-                        </div>
+                        <div class="legend-item"><div class="legend-color risk-high"></div><div class="legend-label">Risiko Tinggi</div></div>
+                        <div class="legend-item"><div class="legend-color risk-medium"></div><div class="legend-label">Risiko Sedang</div></div>
+                        <div class="legend-item"><div class="legend-color risk-low"></div><div class="legend-label">Risiko Rendah</div></div>
+                        <div class="legend-item"><div class="legend-color risk-very-low"></div><div class="legend-label">Risiko Sangat Rendah</div></div>
+                        <div class="legend-item"><div class="legend-color risk-no-data"></div><div class="legend-label">Tidak Ada Data</div></div>
                     </div>
                     
                     <div class="map-filters">
@@ -529,13 +469,12 @@
                             </div>
                         </div>
                         
-                        <button id="apply-filters" class="btn btn-primary" style="width: 100%;">Terapkan Filter</button>
+                        <button id="apply-filters" class="btn btn-primary">Terapkan Filter</button>
                     </div>
                     
                     <div class="info-panel">
                         <h3>Informasi Penting</h3>
                         <p>Peta ini menampilkan data risiko kebakaran hutan berdasarkan analisis cuaca, kelembaban tanah, dan titik panas satelit.</p>
-                        <p>Data diperbarui setiap 6 jam dari sumber terpercaya.</p>
                         <button id="report-incident" class="btn btn-primary">Laporkan Kejadian</button>
                     </div>
                 </div>
@@ -547,7 +486,6 @@
         </div>
     </section>
 
-    <!-- Statistics Section -->
     <section class="statistics">
         <div class="container">
             <h2 class="section-title">Statistik Terkini</h2>
@@ -572,7 +510,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -615,26 +552,49 @@
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
-        // Initialize the map
-        const map = L.map('interactive-map').setView([-2.5489, 118.0149], 5);
-        
-        // Add a tile layer (using a dark theme)
-        L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+        const darkMap = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
             subdomains: 'abcd',
             maxZoom: 19
-        }).addTo(map);
-        
-        // Define risk levels with colors
+        });
+
+        const lightMap = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        });
+
+        const map = L.map('interactive-map', {
+            center: [-2.5489, 118.0149],
+            zoom: 5,
+            layers: [darkMap] 
+        });
+
+
+        setTimeout(function(){ 
+            map.invalidateSize(); 
+        }, 100);
+
+        const hotspotsLayer = L.layerGroup().addTo(map);
+        const preventionLayer = L.layerGroup().addTo(map);
+        const riskAreasLayer = L.layerGroup().addTo(map);
+
+        const baseLayers = {
+            "Peta Gelap": darkMap,
+            "Peta Terang": lightMap
+        };
+
+        const overlays = {
+            "Titik Panas": hotspotsLayer,
+            "Area Berisiko": riskAreasLayer,
+            "Lokasi Pencegahan": preventionLayer
+        };
+
+        L.control.layers(baseLayers, overlays).addTo(map);
+
         const riskLevels = {
-            'high': '#FF4500',
-            'medium': '#FFA500', 
-            'low': '#FFFF00',
-            'very-low': '#90EE90',
-            'no-data': '#CCCCCC'
+            'high': '#FF4500', 'medium': '#FFA500', 'low': '#FFFF00',
+            'very-low': '#90EE90', 'no-data': '#CCCCCC'
         };
         
-        // Sample data for hotspots and risk areas
         const hotspots = [
             { lat: -0.7893, lng: 113.9213, risk: 'high', province: 'kalimantan', description: 'Titik panas terdeteksi di Kalimantan Tengah' },
             { lat: -2.3683, lng: 115.2833, risk: 'medium', province: 'kalimantan', description: 'Aktivitas kebakaran terdeteksi di Kalimantan Selatan' },
@@ -645,65 +605,30 @@
             { lat: -5.1477, lng: 119.4327, risk: 'low', province: 'sulawesi', description: 'Titik panas dengan risiko rendah di Sulawesi Selatan' },
             { lat: -7.7971, lng: 110.3688, risk: 'very-low', province: 'java', description: 'Aktivitas minimal di Yogyakarta' }
         ];
-        
-        // Sample prevention locations
+
         const preventionLocations = [
             { lat: -0.7893, lng: 114.9213, type: 'monitoring', name: 'Pos Pengawasan Kalimantan Tengah' },
             { lat: 0.5071, lng: 101.9478, type: 'water-source', name: 'Sumber Air Darurat Riau' },
             { lat: -2.1159, lng: 106.2097, type: 'community', name: 'Kelompok Masyarakat Peduli Api Bangka' },
             { lat: -5.1477, lng: 119.5327, type: 'monitoring', name: 'Pos Pengawasan Sulawesi Selatan' }
         ];
-        
-        // Create layer groups
-        const hotspotsLayer = L.layerGroup();
-        const preventionLayer = L.layerGroup();
-        const riskAreasLayer = L.layerGroup();
-        
-        // Function to add hotspots to the map
+
         function addHotspots() {
             hotspotsLayer.clearLayers();
-            
             hotspots.forEach(hotspot => {
                 const markerColor = riskLevels[hotspot.risk];
                 const marker = L.circleMarker([hotspot.lat, hotspot.lng], {
-                    color: markerColor,
-                    fillColor: markerColor,
-                    fillOpacity: 0.7,
-                    radius: 8
-                }).addTo(hotspotsLayer);
-                
-                marker.bindPopup(`
-                    <div style="color: #333;">
-                        <h3 style="margin: 0 0 10px; color: ${markerColor};">Titik Panas</h3>
-                        <p><strong>Risiko:</strong> ${getRiskLabel(hotspot.risk)}</p>
-                        <p><strong>Lokasi:</strong> ${hotspot.description}</p>
-                        <p><strong>Update:</strong> 6 jam yang lalu</p>
-                    </div>
-                `);
+                    color: markerColor, fillColor: markerColor, fillOpacity: 0.7, radius: 8
+                }).bindPopup(`<div style="color: #333;"><h3 style="margin:0 0 5px; color:${markerColor}">Titik Panas</h3><p>${hotspot.description}</p></div>`);
+                hotspotsLayer.addLayer(marker);
             });
-            
-            if (document.getElementById('show-hotspots').checked) {
-                hotspotsLayer.addTo(map);
-            }
         }
         
-        // Function to add prevention locations
         function addPreventionLocations() {
             preventionLayer.clearLayers();
-            
             preventionLocations.forEach(location => {
-                let iconColor, iconText;
-                
-                if (location.type === 'monitoring') {
-                    iconColor = '#2E8B57';
-                    iconText = 'M';
-                } else if (location.type === 'water-source') {
-                    iconColor = '#1E90FF';
-                    iconText = 'W';
-                } else {
-                    iconColor = '#FFD700';
-                    iconText = 'C';
-                }
+                let iconColor = location.type === 'monitoring' ? '#2E8B57' : (location.type === 'water-source' ? '#1E90FF' : '#FFD700');
+                let iconText = location.type === 'monitoring' ? 'M' : (location.type === 'water-source' ? 'W' : 'C');
                 
                 const marker = L.marker([location.lat, location.lng], {
                     icon: L.divIcon({
@@ -712,160 +637,44 @@
                         iconSize: [30, 30],
                         iconAnchor: [15, 15]
                     })
-                }).addTo(preventionLayer);
-                
-                let typeLabel;
-                if (location.type === 'monitoring') {
-                    typeLabel = 'Pos Pengawasan';
-                } else if (location.type === 'water-source') {
-                    typeLabel = 'Sumber Air';
-                } else {
-                    typeLabel = 'Kelompok Masyarakat';
-                }
-                
-                marker.bindPopup(`
-                    <div style="color: #333;">
-                        <h3 style="margin: 0 0 10px;">${location.name}</h3>
-                        <p><strong>Tipe:</strong> ${typeLabel}</p>
-                        <p><strong>Status:</strong> Aktif</p>
-                        <button class="btn btn-primary" style="margin-top: 10px;">Lihat Detail</button>
-                    </div>
-                `);
+                }).bindPopup(`<div style="color: #333;"><h3 style="margin:0 0 5px;">${location.name}</h3></div>`);
+                preventionLayer.addLayer(marker);
             });
-            
-            if (document.getElementById('show-prevention').checked) {
-                preventionLayer.addTo(map);
-            }
         }
-        
-        // Function to add risk areas (simplified for demo)
+
         function addRiskAreas() {
             riskAreasLayer.clearLayers();
-            
-            // Add some sample risk areas (circles for demonstration)
             const riskAreas = [
                 { lat: -0.5, lng: 114, risk: 'high', radius: 80000 },
                 { lat: 0.5, lng: 101.5, risk: 'high', radius: 60000 },
-                { lat: -2.5, lng: 115.5, risk: 'medium', radius: 50000 },
-                { lat: -5, lng: 119.5, risk: 'low', radius: 40000 }
+                { lat: -2.5, lng: 115.5, risk: 'medium', radius: 50000 }
             ];
-            
             riskAreas.forEach(area => {
                 const color = riskLevels[area.risk];
-                const circle = L.circle([area.lat, area.lng], {
-                    color: color,
-                    fillColor: color,
-                    fillOpacity: 0.2,
-                    radius: area.radius
+                L.circle([area.lat, area.lng], {
+                    color: color, fillColor: color, fillOpacity: 0.2, radius: area.radius
                 }).addTo(riskAreasLayer);
-                
-                circle.bindPopup(`
-                    <div style="color: #333;">
-                        <h3 style="margin: 0 0 10px; color: ${color};">Area Risiko ${getRiskLabel(area.risk)}</h3>
-                        <p><strong>Status:</strong> Diperlukan Tindakan Pencegahan</p>
-                        <p><strong>Update:</strong> 12 jam yang lalu</p>
-                    </div>
-                `);
             });
-            
-            if (document.getElementById('show-risk-areas').checked) {
-                riskAreasLayer.addTo(map);
-            }
         }
-        
-        // Helper function to get risk label in Indonesian
-        function getRiskLabel(risk) {
-            const labels = {
-                'high': 'Tinggi',
-                'medium': 'Sedang', 
-                'low': 'Rendah',
-                'very-low': 'Sangat Rendah'
-            };
-            return labels[risk] || 'Tidak Diketahui';
-        }
-        
-        // Apply filters function
-        function applyFilters() {
-            const provinceFilter = document.getElementById('province-select').value;
-            const riskFilter = document.getElementById('risk-level').value;
-            
-            // In a real application, you would filter the data based on these criteria
-            // For this demo, we'll just re-add all markers
-            addHotspots();
-            addPreventionLocations();
-            addRiskAreas();
-            
-            // Show a message about applied filters
-            let message = 'Filter diterapkan: ';
-            if (provinceFilter !== 'all') {
-                message += `Provinsi: ${document.getElementById('province-select').options[document.getElementById('province-select').selectedIndex].text}`;
-            }
-            if (riskFilter !== 'all') {
-                message += `${provinceFilter !== 'all' ? ', ' : ''}Risiko: ${document.getElementById('risk-level').options[document.getElementById('risk-level').selectedIndex].text}`;
-            }
-            
-            if (provinceFilter === 'all' && riskFilter === 'all') {
-                message = 'Semua filter dihapus';
-            }
-            
-            // In a real app, you might show this message to the user
-            console.log(message);
-        }
-        
-        // Initialize the map with data
+
         addHotspots();
         addPreventionLocations();
         addRiskAreas();
-        
-        // Event listeners
-        document.getElementById('apply-filters').addEventListener('click', applyFilters);
-        
+
         document.getElementById('show-hotspots').addEventListener('change', function() {
-            if (this.checked) {
-                hotspotsLayer.addTo(map);
-            } else {
-                map.removeLayer(hotspotsLayer);
-            }
+            if(this.checked) map.addLayer(hotspotsLayer); else map.removeLayer(hotspotsLayer);
         });
-        
         document.getElementById('show-risk-areas').addEventListener('change', function() {
-            if (this.checked) {
-                riskAreasLayer.addTo(map);
-            } else {
-                map.removeLayer(riskAreasLayer);
-            }
+            if(this.checked) map.addLayer(riskAreasLayer); else map.removeLayer(riskAreasLayer);
         });
-        
         document.getElementById('show-prevention').addEventListener('change', function() {
-            if (this.checked) {
-                preventionLayer.addTo(map);
-            } else {
-                map.removeLayer(preventionLayer);
-            }
+            if(this.checked) map.addLayer(preventionLayer); else map.removeLayer(preventionLayer);
         });
         
-        document.getElementById('report-incident').addEventListener('click', function() {
-            alert('Fitur pelaporan akan membuka formulir untuk melaporkan kejadian kebakaran hutan. Dalam implementasi nyata, ini akan mengarahkan pengguna ke halaman pelaporan.');
+        document.getElementById('apply-filters').addEventListener('click', function() {
+            addHotspots(); addPreventionLocations(); addRiskAreas();
+            alert("Filter berhasil diterapkan (Simulasi)");
         });
-        
-        // Add layer control
-        const baseLayers = {
-            "Peta Gelap": L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-                attribution: '&copy; OpenStreetMap, CARTO'
-            }),
-            "Peta Terang": L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '&copy; OpenStreetMap contributors'
-            })
-        };
-        
-        const overlays = {
-            "Titik Panas": hotspotsLayer,
-            "Area Berisiko": riskAreasLayer,
-            "Lokasi Pencegahan": preventionLayer
-        };
-        
-        L.control.layers(baseLayers, overlays).addTo(map);
     </script>
 </body>
-
 </html>
