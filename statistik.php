@@ -33,14 +33,13 @@
             margin: 0 auto;
         }
         
-        /* Header Styles */
         header {
             padding: 1.5rem 0;
-            background-color: rgba(28, 28, 28, 0.9);
-            position: fixed;
+            background-color: var(--dark-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            position: fixed; 
             width: 100%;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            z-index: 100;
         }
         
         .header-content {
@@ -81,7 +80,6 @@
             color: var(--fire-orange);
         }
         
-        /* Page Header */
         .page-header {
             padding: 8rem 0 4rem;
             background: linear-gradient(rgba(28, 28, 28, 0.8), rgba(28, 28, 28, 0.9)), 
@@ -103,7 +101,6 @@
             margin: 0 auto;
         }
         
-        /* Section Styles */
         section {
             padding: 5rem 0;
         }
@@ -125,7 +122,6 @@
             margin: 1rem auto;
         }
         
-        /* Quick Stats */
         .quick-stats {
             background-color: rgba(46, 139, 87, 0.1);
         }
@@ -177,7 +173,6 @@
             color: #51CF66;
         }
         
-        /* Charts Section */
         .charts {
             background-color: var(--dark-bg);
         }
@@ -214,7 +209,6 @@
             height: 300px;
         }
         
-        /* Regional Data */
         .regional {
             background-color: rgba(46, 139, 87, 0.1);
         }
@@ -270,7 +264,6 @@
             color: rgba(255, 255, 255, 0.7);
         }
         
-        /* Causes Section */
         .causes {
             background-color: var(--dark-bg);
         }
@@ -308,7 +301,6 @@
             font-size: 0.9rem;
         }
         
-        /* Impact Section */
         .impact {
             background-color: rgba(46, 139, 87, 0.1);
         }
@@ -338,7 +330,6 @@
             color: var(--fire-orange);
         }
         
-        /* Data Source */
         .data-source {
             background-color: var(--dark-bg);
             text-align: center;
@@ -350,7 +341,6 @@
             color: rgba(255, 255, 255, 0.7);
         }
         
-        /* Footer */
         footer {
             background-color: #111;
             padding: 3rem 0 1.5rem;
@@ -423,7 +413,6 @@
             font-size: 0.9rem;
         }
         
-        /* Responsive Design */
         @media (max-width: 768px) {
             .page-header h1 {
                 font-size: 2.2rem;
@@ -444,7 +433,6 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <div class="container">
             <div class="header-content">
@@ -463,7 +451,6 @@
         </div>
     </header>
 
-    <!-- Page Header -->
     <section class="page-header">
         <div class="container">
             <h1>Statistik Kebakaran Hutan 2025</h1>
@@ -471,7 +458,6 @@
         </div>
     </section>
 
-    <!-- Quick Stats Section -->
     <section class="quick-stats">
         <div class="container">
             <h2 class="section-title">Statistik Cepat 2025</h2>
@@ -508,7 +494,6 @@
         </div>
     </section>
 
-    <!-- Charts Section -->
     <section class="charts">
         <div class="container">
             <h2 class="section-title">Visualisasi Data 2025</h2>
@@ -541,7 +526,6 @@
         </div>
     </section>
 
-    <!-- Regional Data Section -->
     <section class="regional">
         <div class="container">
             <h2 class="section-title">Data Regional 2025</h2>
@@ -606,7 +590,6 @@
         </div>
     </section>
 
-    <!-- Causes Section -->
     <section class="causes">
         <div class="container">
             <h2 class="section-title">Penyebab Utama Kebakaran 2025</h2>
@@ -650,7 +633,6 @@
         </div>
     </section>
 
-    <!-- Impact Section -->
     <section class="impact">
         <div class="container">
             <h2 class="section-title">Dampak Positif Program 2025</h2>
@@ -679,7 +661,6 @@
         </div>
     </section>
 
-    <!-- Data Source Section -->
     <section class="data-source">
         <div class="container">
             <h2 class="section-title">Sumber Data & Metodologi</h2>
@@ -691,7 +672,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -735,9 +715,7 @@
     </footer>
 
     <script>
-        // Initialize Charts
         document.addEventListener('DOMContentLoaded', function() {
-            // Trend Chart 2021-2025
             const trendCtx = document.getElementById('trendChart').getContext('2d');
             const trendChart = new Chart(trendCtx, {
                 type: 'line',
@@ -785,7 +763,6 @@
                 }
             });
 
-            // Cause Chart 2025
             const causeCtx = document.getElementById('causeChart').getContext('2d');
             const causeChart = new Chart(causeCtx, {
                 type: 'doughnut',
@@ -819,7 +796,6 @@
                 }
             });
 
-            // Monthly Chart 2025
             const monthlyCtx = document.getElementById('monthlyChart').getContext('2d');
             const monthlyChart = new Chart(monthlyCtx, {
                 type: 'bar',
@@ -865,7 +841,6 @@
                 }
             });
 
-            // Forest Type Chart 2025
             const forestTypeCtx = document.getElementById('forestTypeChart').getContext('2d');
             const forestTypeChart = new Chart(forestTypeCtx, {
                 type: 'polarArea',
